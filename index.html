@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вход</title>
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      position: absolute;
+      padding: 15px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(45deg, orange, gold);
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    button:active {
+      transform: scale(0.9);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Попробуйте войти 😄</h2>
+  <p>Нажмите на кнопку</p>
+
+  <button id="btn">Войти</button>
+
+  <script>
+    const btn = document.getElementById("btn");
+
+    function moveButton() {
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+
+    // Для ПК
+    btn.addEventListener("mouseover", moveButton);
+
+    // Для телефона
+    btn.addEventListener("touchstart", moveButton);
+  </script>
+
+</body>
+</html>
